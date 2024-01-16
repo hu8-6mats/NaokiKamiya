@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="304" height="51" viewBox="0 0 304 51">
+  <defs>
+    <filter id="Naoki_Kamiya." x="0" y="0" width="304" height="51" filterUnits="userSpaceOnUse">
+      <feOffset dy="1" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="0.5" result="blur"/>
+      <feFlood flood-color="#ebffff" flood-opacity="0.502" result="color"/>
+      <feComposite operator="out" in="SourceGraphic" in2="blur"/>
+      <feComposite operator="in" in="color"/>
+      <feComposite operator="in" in2="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g data-type="innerShadowGroup">
+    <text id="Naoki_Kamiya.-2" data-name="Naoki Kamiya." transform="translate(152 39)" fill="#413732" font-size="40" font-family="YuGothic-Regular, Yu Gothic" letter-spacing="0.08em" opacity="0.95"><tspan x="-151.71" y="0">Naoki Kamiya.</tspan></text>
+    <g transform="matrix(1, 0, 0, 1, 0, 0)" filter="url(#Naoki_Kamiya.)">
+      <text id="Naoki_Kamiya.-3" data-name="Naoki Kamiya." transform="translate(152 39)" fill="#fff" font-size="40" font-family="YuGothic-Regular, Yu Gothic" letter-spacing="0.08em" opacity="0.95"><tspan x="-151.71" y="0">Naoki Kamiya.</tspan></text>
+    </g>
+  </g>
+</svg>

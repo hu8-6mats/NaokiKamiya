@@ -1,0 +1,493 @@
+@charset "UTF-8";
+/*============================ SETTING ============================*/
+html {
+  font-size: 100%;
+}
+
+/*============================ BODY ============================*/
+body {
+  color: rgb(65, 55, 50);
+  font-size: 0.875rem;
+  min-height: 100vh;
+  position: relative;
+  font-family: "游ゴシック体", YuGothic, "游ゴシック Medium", "Yu Gothic Medium", "游ゴシック", "Yu Gothic", sans-serif;
+}
+
+a {
+  color: rgb(65, 55, 50);
+  text-decoration: none;
+  transition: all 0.5s;
+  text-align: center;
+}
+
+a:hover {
+  opacity: 0.4;
+}
+
+img {
+  max-width: 100%;
+  vertical-align: bottom;
+}
+
+li {
+  list-style: none;
+}
+
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  font-size: 0.85rem;
+}
+
+.section-title {
+  font-size: 1.9rem;
+  font-weight: 200;
+  letter-spacing: 0.5em;
+  opacity: 0.9;
+  text-align: center;
+  margin-bottom: 75px;
+}
+
+.fade-in {
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(150px);
+  transition: opacity 1s, visibility 1s, transform 1s;
+}
+
+.is-fadein {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(0);
+}
+
+/*============================ HEADER ============================*/
+#header {
+  height: 80px;
+  width: 100%;
+  z-index: 40;
+  position: fixed;
+  transition: 0.75s;
+}
+
+.logo {
+  line-height: 1px;
+  position: fixed;
+  top: 15px;
+  left: 30px;
+  z-index: 40;
+  transition: 0.3s;
+}
+.logo a {
+  display: block;
+}
+.logo.active {
+  display: none;
+}
+
+/*------------------ HAMBURGER ------------------*/
+.hamburger {
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  position: fixed;
+  top: 20px;
+  right: 25px;
+  z-index: 40;
+}
+.hamburger span {
+  width: 30px;
+  height: 2px;
+  background-color: rgb(65, 55, 50);
+  position: absolute;
+  left: 5px;
+  transition: 0.75s ease-in-out;
+}
+.hamburger span:nth-child(1) {
+  top: 10px;
+}
+.hamburger span:nth-child(2) {
+  top: 20px;
+}
+.hamburger span:nth-child(3) {
+  top: 30px;
+}
+.hamburger.active span:nth-child(1) {
+  top: 20px;
+  left: 5px;
+  transform: rotate(405deg);
+}
+.hamburger.active span:nth-child(2), .hamburger.active span:nth-child(3) {
+  top: 20px;
+  transform: rotate(-405deg);
+}
+
+/*------------------ NAVIGATION ------------------*/
+#navi {
+  width: 100%;
+  background: linear-gradient(rgb(255, 255, 255), 85%, transparent);
+  position: fixed;
+  top: 0;
+  left: 0;
+  text-align: center;
+  transform: translateY(-100%);
+  transition: 0.4s;
+  z-index: 30;
+}
+#navi ul {
+  width: 100%;
+  opacity: 0.75;
+  padding: 70px 0 500px 0;
+}
+#navi ul li {
+  padding: 15px 0;
+}
+#navi ul li a {
+  color: rgb(65, 55, 50);
+  display: block;
+  font-size: 1.05rem;
+  letter-spacing: 0.3em;
+}
+#navi.active {
+  transform: translateY(0%);
+}
+
+/*------------------ SIDE-BUTTON ------------------*/
+#side-btn {
+  border: 1px solid rgb(65, 55, 50);
+  border-radius: 4px;
+  position: fixed;
+  right: -160px;
+  bottom: 300px;
+  transform: rotate(-90deg) translateY(100px);
+  transition: 0.6s;
+  z-index: 30;
+}
+#side-btn a {
+  width: 150px;
+  font-size: 0.875rem;
+  display: inline-block;
+  letter-spacing: 0.1em;
+  padding: 10px 0;
+  transition: 0.6s;
+  text-align: center;
+  opacity: 1;
+  left: 0;
+  position: relative;
+}
+#side-btn a .instagram {
+  position: relative;
+}
+#side-btn a:nth-child(1):hover {
+  color: #fff;
+  background-color: #1DA1F2;
+}
+#side-btn a:nth-child(2) {
+  border-left: 1px solid rgb(65, 55, 50);
+}
+#side-btn a:nth-child(2)::before {
+  background: linear-gradient(150deg, rgb(247, 166, 12) 10%, rgb(255, 34, 87) 40%, rgb(154, 39, 238) 68%, rgb(35, 102, 247) 90%);
+  content: "";
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  transition: all 0.6s ease-out;
+  width: 100%;
+  opacity: 0;
+}
+#side-btn a:nth-child(2):hover {
+  color: #fff;
+}
+#side-btn a:nth-child(2):hover::before {
+  opacity: 1;
+}
+#side-btn a:nth-child(3) {
+  border-left: 1px solid rgb(65, 55, 50);
+}
+#side-btn a:nth-child(3):hover {
+  color: #fff;
+  background-color: #DA1725;
+}
+
+/*============================ MAIN-VISUAL ============================*/
+#mainvisual {
+  overflow-x: hidden;
+  margin-bottom: 100px;
+}
+#mainvisual img {
+  width: 100%;
+  height: 100vh;
+  flex-shrink: 0;
+  -o-object-fit: cover;
+     object-fit: cover;
+  transition: 1.75s;
+}
+
+/*============================ TOPICS ============================*/
+#topics {
+  width: 100%;
+  margin-bottom: 200px;
+  margin-top: -250px;
+  padding-top: 350px;
+}
+#topics dl {
+  display: flex;
+  flex-wrap: wrap;
+}
+#topics dt {
+  width: 20%;
+  border-bottom: 1px solid rgba(65, 55, 50, 0.3);
+  padding: 25px;
+}
+#topics dt:last-of-type {
+  border-bottom: none;
+}
+#topics dt:last-of-type {
+  border-bottom: none;
+}
+#topics dd {
+  width: 80%;
+  border-bottom: 1px solid rgba(65, 55, 50, 0.3);
+  padding: 25px;
+}
+#topics dd:last-child {
+  border-bottom: none;
+}
+#topics .read-more {
+  width: 180px;
+  font-size: 0.875rem;
+  letter-spacing: 0.1em;
+  padding: 10px 0;
+  border: solid 1px rgb(65, 55, 50);
+  color: rgb(65, 55, 50);
+  display: block;
+  margin: 50px auto 0 auto;
+  position: relative;
+  transition: 0.5s;
+}
+#topics .read-more:hover {
+  color: rgb(255, 255, 255);
+  background-color: rgb(65, 55, 50);
+  opacity: 1;
+}
+#topics .read-more:hover::before, #topics .read-more:hover::after {
+  right: -60px;
+}
+#topics .read-more::before, #topics .read-more::after {
+  content: "";
+  position: absolute;
+  right: -50px;
+  height: 1px;
+  background-color: rgb(65, 55, 50);
+  transition: 0.5s;
+}
+#topics .read-more::before {
+  width: 60px;
+  top: 30px;
+}
+#topics .read-more::after {
+  width: 15px;
+  top: 26px;
+  transform: rotate(25deg);
+}
+
+/*============================ PROFILE ============================*/
+#profile {
+  width: 100%;
+  margin-bottom: 300px;
+  margin-top: -250px;
+  padding-top: 250px;
+}
+#profile .photo-history {
+  display: flex;
+  margin-bottom: 60px;
+  align-items: center;
+}
+#profile .photo-history .photo {
+  width: 25%;
+}
+#profile .photo-history .photo img {
+  height: 200px;
+  width: 200px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 50%;
+}
+#profile .photo-history dl {
+  width: 75%;
+  display: flex;
+  flex-wrap: wrap;
+}
+#profile .photo-history dl dt {
+  width: 30%;
+  border-bottom: 1px solid rgba(65, 55, 50, 0.3);
+  padding: 15px;
+}
+#profile .photo-history dl dt:last-of-type {
+  border-bottom: none;
+}
+#profile .photo-history dl dt:last-of-type {
+  border-bottom: none;
+}
+#profile .photo-history dl dd {
+  width: 70%;
+  border-bottom: 1px solid rgba(65, 55, 50, 0.3);
+  padding: 15px;
+}
+#profile .photo-history dl dd:last-child {
+  border-bottom: none;
+}
+#profile p {
+  font-size: 1rem;
+  text-align: center;
+}
+
+/*============================ WORKS ============================*/
+#works {
+  margin: -250px 100px 300px 100px;
+  padding-top: 250px;
+}
+#works .slider {
+  margin: 0 auto;
+  max-width: 95%;
+}
+#works .slider .slider-img {
+  margin: 0 auto;
+}
+
+/*============================ CONTACT ============================*/
+#contact {
+  width: 100%;
+  margin-bottom: 175px;
+  margin-top: -250px;
+  padding-top: 250px;
+}
+#contact .items {
+  display: flex;
+  text-align: center;
+  margin: 130px auto 75px auto;
+}
+#contact .items .item1, #contact .items .item2, #contact .items .item3 {
+  margin: 0 30px;
+  padding-top: 95px;
+  width: 33%;
+  height: 260px;
+  border: 1px solid rgb(65, 55, 50);
+  border-radius: 50%;
+  transition: 0.5s;
+  position: relative;
+}
+#contact .items .item1 .item-name, #contact .items .item2 .item-name, #contact .items .item3 .item-name {
+  display: flex;
+  flex-direction: column;
+  color: rgb(65, 55, 50);
+}
+#contact .items .item1 .item-name span, #contact .items .item2 .item-name span, #contact .items .item3 .item-name span {
+  font-size: 1.05rem;
+  line-height: 1.75;
+  letter-spacing: 0.25em;
+}
+#contact .items .item1 .item-price, #contact .items .item2 .item-price, #contact .items .item3 .item-price {
+  position: absolute;
+  top: 125px;
+  left: 90px;
+  font-size: 1.2rem;
+  visibility: hidden;
+}
+#contact .caution {
+  font-size: 0.75rem;
+  line-height: 2;
+  text-align: center;
+}
+#contact a {
+  width: 180px;
+  font-size: 0.875rem;
+  letter-spacing: 0.1em;
+  padding: 10px 0;
+  border: solid 1px rgb(65, 55, 50);
+  color: rgb(65, 55, 50);
+  display: block;
+  margin: 50px auto 0 auto;
+  position: relative;
+  transition: 0.5s;
+}
+#contact a:hover {
+  color: rgb(255, 255, 255);
+  background-color: rgb(65, 55, 50);
+  opacity: 1;
+}
+#contact a:hover::before, #contact a:hover::after {
+  right: -60px;
+}
+#contact a::before, #contact a::after {
+  content: "";
+  position: absolute;
+  right: -50px;
+  height: 1px;
+  background-color: rgb(65, 55, 50);
+  transition: 0.5s;
+}
+#contact a::before {
+  width: 60px;
+  top: 30px;
+}
+#contact a::after {
+  width: 15px;
+  top: 26px;
+  transform: rotate(25deg);
+}
+
+/*============================ FOOTER ============================*/
+#footer {
+  text-align: center;
+  border-top: 1px solid rgb(255, 255, 255);
+  padding: 40px 30px 30px 30px;
+  background: linear-gradient(rgb(255, 255, 255), rgb(65, 55, 50));
+}
+#footer p {
+  color: rgb(65, 55, 50);
+  font-size: 0.75rem;
+  letter-spacing: 0.25em;
+}
+
+/*============================ SMARTPHONE ============================*/
+@media screen and (max-width: 675px) {
+  .hamburger {
+    top: 17.5px;
+    right: 20px;
+  }
+  #navi ul {
+    padding: 30px 0 50px 0;
+  }
+  #profile .photo-history {
+    flex-direction: column;
+  }
+  #profile .photo-history .photo {
+    width: 300px;
+    height: 300px;
+    position: relative;
+  }
+  #profile .photo-history .photo img {
+    position: absolute;
+    top: 30px;
+    left: 50px;
+  }
+  #profile {
+    margin-bottom: 100px;
+  }
+  #works {
+    width: 100%;
+    margin: 0;
+    padding: 0 0 150px 0;
+  }
+  #contact .items {
+    flex-direction: column;
+    width: 100%;
+  }
+  #contact .items .item1, #contact .items .item2, #contact .items .item3 {
+    margin: 0 auto 10px auto;
+    width: 70%;
+    height: 290px;
+  }
+}/*# sourceMappingURL=style.css.map */
